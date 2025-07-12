@@ -1,0 +1,126 @@
+@use '@material/tooltip/tooltip';
+@use '@material/tooltip/tooltip-theme';
+@use '@material/tooltip/plain-tooltip-theme';
+// @use '../core/mdc-helpers/mdc-helpers';
+
+// @include mdc-helpers.disable-mdc-fallback-declarations {
+//   // Only include the structural styles, because we handle the animation ourselves.
+//   @include tooltip.static-styles($query: structure);
+//   @include plain-tooltip-theme.theme-styles((
+//     container-shape: tooltip-theme.$border-radius,
+//     container-color: #fff,
+//     supporting-text-color: #000,
+//     supporting-text-font: inherit,
+//     supporting-text-size: inherit,
+//     supporting-text-tracking: inherit,
+//     supporting-text-weight: inherit,
+//   ));
+// }
+
+.mat-mdc-tooltip {
+  // We don't use MDC's positioning so this has to be relative.
+  position: relative;
+  transform: scale(0);
+
+  // Increases the area of the tooltip so the user's pointer can go from the trigger directly to it.
+  &::before {
+    $offset: -8px;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+
+    // Only set the offset on the side closest to the panel so we
+    // don't accidentally cover more content than we need to.
+    .mat-mdc-tooltip-panel-below & {
+      top: $offset;
+    }
+
+    .mat-mdc-tooltip-panel-above & {
+      bottom: $offset;
+    }
+
+    // Note that here we use left/right instead of before/after
+    // so that we don't have to add extra styles for RTL.
+    .mat-mdc-tooltip-panel-right & {
+      left: $offset;
+    }
+
+    .mat-mdc-tooltip-panel-left & {
+      right: $offset;
+    }
+  }
+
+  &._mat-animation-noopable {
+    animation: none;
+    transform: scale(1);
+  }
+}
+
+.mat-mdc-tooltip-panel-non-interactive {
+  pointer-events: none;
+}
+
+// TODO(crisbeto): we may be able to use MDC directly for these animations.
+
+@keyframes mat-mdc-tooltip-show {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mat-mdc-tooltip-hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.mat-mdc-tooltip-show {
+  animation: mat-mdc-tooltip-show 150ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+.mat-mdc-tooltip-hide {
+  animation: mat-mdc-tooltip-hide 75ms cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+.mdc-tooltip__surface {
+    background-color: var(--mdc-plain-tooltip-container-color, #fff);
+    color:#fff;
+    border-radius: var(--mdc-tooltip-container-shape, 4px);
+    font-family: var(--mdc-tooltip-supporting-text-font, inherit);
+}
+
+// .mdc-tooltip__surface-animation {
+//     opacity: 0;
+//     will-change: transform, opacity;
+// }
+
+.mdc-tooltip__surface {
+    line-height: 16px;
+    padding: 4px 8px;
+    min-width: 40px;
+    max-width: 200px;
+    min-height: 24px;
+    max-height: 40vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+.mdc-tooltip__surface {
+    word-break: var(--mdc-tooltip-word-break, normal);
+    overflow-wrap: anywhere;
+}

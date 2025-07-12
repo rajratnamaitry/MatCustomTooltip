@@ -1,32 +1,24 @@
-# CustMatTooltip
+# MatCustomTooltip
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
-## Usage
+## Code scaffolding
 
-1. Import `CustMatTooltipModule` in your app module:
-   ```ts
-   import { CustMatTooltipModule } from 'projects/cust-mat-tooltip/src/public-api';
+Run `ng generate component component-name --project mat-custom-tooltip` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project mat-custom-tooltip`.
+> Note: Don't forget to add `--project mat-custom-tooltip` or else it will be added to the default project in your `angular.json` file. 
 
-   @NgModule({
-     imports: [CustMatTooltipModule, ...]
-   })
-   export class AppModule { }
-   ```
+## Build
 
-2. Use the `custToolTip` directive in your templates:
-   ```html
-   <button #tooltipc="custToolTip" custToolTip [toolTipMessage]="'<h2>Custom Tooltip</h2>'">custToolTip</button>
-   <button matButton (click)="tooltipc.show()">Show tooltip</button>
-   ```
-
-## Customization
-
-- The tooltip content can be set using the `[toolTipMessage]` input, which supports HTML.
-- The tooltip uses a custom component for rendering, allowing for further style and behavior customization.
-- Styles are defined in [`cust-mat-tooltip.component.scss`](src/lib/cust-mat-tooltip.component.scss).
+Run `ng build mat-custom-tooltip` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build cust-mat-tooltip`, go to the dist folder `cd dist/cust-mat-tooltip` and run `npm publish`.
+After building your library with `ng build mat-custom-tooltip`, go to the dist folder `cd dist/mat-custom-tooltip` and run `npm publish`.
 
+## Running unit tests
+
+Run `ng test mat-custom-tooltip` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
