@@ -25,8 +25,8 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "ng build mat-custom-tooltip",
-    "test": "ng test mat-custom-tooltip",
-    "publish:lib": "npm publish dist/mat-custom-tooltip --access public"
+    "build": "ng build MatCustomTooltip",
+    "test": "ng test MatCustomTooltip",
+    "publish": "npm run build && npm publish dist/mat-custom-tooltip --access public"
   }
 }

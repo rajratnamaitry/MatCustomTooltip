@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChangeDetectorRef, ElementRef } from '@angular/core';
-import { MatCustomTooltipComponent } from 'projects/cust-mat-tooltip/src/public-api';
+import { MatCustomTooltipComponent } from './mat-custom-tooltip.component';
 
 describe('MatCustomTooltipComponent', () => {
   let component: MatCustomTooltipComponent;
