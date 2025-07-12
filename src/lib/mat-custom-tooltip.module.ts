@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { MatCustomTooltipComponent } from './mat-custom-tooltip.component';
 import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ToolTipDirective } from 'projects/cust-mat-tooltip/src/lib/mat-custom-tooltip.directive';
+import { ToolTipDirective } from './mat-custom-tooltip.directive';
+
 
 
 
