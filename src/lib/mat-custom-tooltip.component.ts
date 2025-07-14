@@ -9,7 +9,7 @@ import { TooltipComponent } from '@angular/material/tooltip';
       class="mdc-tooltip mdc-tooltip--shown mat-mdc-tooltip"
       (animationend)="_handleAnimationEnd($event)"
       [class.mdc-tooltip--multiline]="_isMultiline">
-      <div class="mdc-tooltip__surface mdc-tooltip__surface-animation" [innerHTML]="message">
+      <div class="mdc-tooltip__surface-animation" [innerHTML]="message">
       </div>
   </div>
   `,
@@ -20,7 +20,7 @@ import { TooltipComponent } from '@angular/material/tooltip';
     '(mouseleave)': '_handleMouseLeave($event)',
     'aria-hidden': 'true',
   },
-  styleUrls: ["./mat-custom-tooltip.component.scss"],
+  // styleUrls: ["./mat-custom-tooltip.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatCustomTooltipComponent extends TooltipComponent {
