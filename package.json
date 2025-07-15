@@ -1,6 +1,6 @@
 {
   "name": "mat-custom-tooltip",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An Angular library that extends Angular Material's tooltip with HTML content, custom positions, manual control, and accessibility support.",
   "author": "rajratna maitry",
   "repository": {

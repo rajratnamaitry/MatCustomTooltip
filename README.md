@@ -1,6 +1,12 @@
-# MatCustomTooltip
+# Mat Custom Tooltip
 
 **MatCustomTooltip** is an Angular library that extends Angular Material's tooltip functionality, allowing you to display rich HTML content and customize tooltip appearance and behavior. With easy integration and flexible options, MatCustomTooltip helps you create interactive, styled tooltips for your Angular applications.
+
+---
+
+**🌐 [Live Demo](https://rajratnamaitry.github.io/cust-mat-tooltip-project/)**
+
+---
 
 ## Features
 
